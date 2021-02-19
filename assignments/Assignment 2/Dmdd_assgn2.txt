@@ -1,0 +1,89 @@
+use pubs
+
+--Query 1 (authors in California)
+
+select au_fname,au_lname
+from authors
+where state = 'CA'
+
+--Query 2(List of titles and author names)
+
+select titles.title, authors.au_fname, authors.au_lname
+from  titleauthor
+inner join authors
+on titleauthor.au_id= authors.au_id
+inner join titles
+on titles.title_id = titleauthor.title_id
+
+--select * from authors
+select * from titleauthor
+
+--Query 3(All employees and their jobs)
+
+select *
+from jobs
+inner join employee
+on jobs.job_id=employee.job_id
+
+
+--Query 4(List the titles by total sales price)
+
+select * from titles
+select * from sales
+
+
+select titles.title, titles.price * sales.qty as total_sales
+from titles
+inner join sales
+on titles.title_id = sales.title_id
+
+
+
+
+--Query 5(Find the sales for stores in California)
+
+select * from sales
+inner join stores 
+on sales.stor_id = stores.stor_id
+where state = 'CA'
+
+
+--Query 6(Use SSMS to generate a script to create the authors table describe what the script does)
+
+select * from authors
+
+
+--Query 8(List the store name, title title name and quantity for all stores that have net 30 payterms)
+
+select * from stores
+select * from titles
+select * from sales
+
+
+select stores.stor_name, sales.qty , sales.payterms, titles.title
+from stores
+inner join sales
+on stores.stor_id = sales.stor_id
+
+inner join titles on titles.title_id = sales.title_id
+where payterms = 'Net 30'
+
+
+--Query 9 (Find the titles that do not have any sales show the name of the title)
+
+select * from titles
+select * from sales
+
+
+SELECT distinct titles.title_id, titles.title
+FROM titles 
+LEFT OUTER JOIN sales
+ON titles.title_id = sales.title_id 
+
+EXCEPT
+
+SELECT distinct titles.title_id, titles.title
+FROM titles 
+RIGHT OUTER JOIN sales
+ON titles.title_id = sales.title_id 
+

@@ -1,0 +1,28 @@
+
+Business Rules (WEEK 4)
+
+
+Dentist
+Dentist is a person who operates the clinic and is responsible for all the operations and appointments that are carried on the clinic premises
+Dentist recevies all the payment done by the patient.
+
+Patient
+Patient is a person who comes in the clinic for an appointment with a Dentist.
+Patient is liable to pay for his/her expenses.
+Patient can make bookings for the appointment as per their convinence.
+
+Billing
+Billing is the cost that is associated to a particular appointment that has one dentist and one patient interaction.
+The dentist decides what the billing amount is and the patient pays for it.
+
+Insurance
+Insurance is defined as the company that covers full or partial cost of the treatment of the patient.
+Insurance has many operators and will vary from patient to patient.
+Dentist is liable to file for the insurance.
+
+Appointment
+Appointment is defined as a format meet between a dentist and a patient.
+Appointment is booked by a patient and confirmed by the dentist.
+
+Supplies
+Supplies is defined as
